@@ -7,20 +7,24 @@ from pygame.math import Vector2 #importanto a biblioteca math = matematica para 
 class SKAKE:
     
     def __init__(self):
+        
         self.body = [Vector2(5,10),Vector2(4,10),Vector2(3,10)] #posicionamento dos blocos da cobra
         self.direction = Vector2(1,0)
         self.new_block = False
 
 
-
     def draw_snake(self):
 
-        
-        for block in self.body: #percorrer o vetor
+
+
+       for block in self.body: #percorrer o vetor
          x_pos = int(block.x * cell_size)
          y_pos = int(block.y * cell_size)
          block_rect = pygame.Rect(x_pos, y_pos,cell_size,cell_size)
          pygame.draw.rect(screen,(183,191,122), block_rect) #desenhando a cobra
+
+
+
 
     def move_snake(self):
         if self.new_block == True:
@@ -45,7 +49,7 @@ class FRUIT: #classe fruta
     def draw_fruit(self): #criando funcao para desenhar a fruta
         fruit_rect = pygame.Rect(int(self.pos.x * cell_size),int(self.pos.y * cell_size) ,cell_size,cell_size ) #passado a posicao da fruta com o tamanho
         #screen.blit(apple,fruit_rect) #posicionado a maça no vetor do retangulo
-        pygame.draw.rect(screen, (126,166,114), fruit_rect) #desenhado o retangulo
+        pygame.draw.rect(screen, (114,0,0), fruit_rect) #desenhado o retangulo
     
     def randomize (self):
         self.x = random.randint(0,cell_number - 1) # eixo x forma aleatoria
@@ -100,11 +104,11 @@ pygame.display.set_caption('Jogo da Cobrinha') #alterado a barra de titulo
 #test_rect = pygame.Rect(100,200,100,100) #retangulo de teste de colisao (x,y,w,h) 
 #test_rect = test_surface.get_rect(topright=(200,250)) #alinhando o retangulo centro outro comando topright, center
 
-cell_size = 34 #tamanho da celula 
+cell_size = 40 #tamanho da celula 
 cell_number = 20 #numero de celulas
 screen = pygame.display.set_mode((cell_number * cell_size,cell_number * cell_size))  #criando a janela largura e altura
 clock = pygame.time.Clock() #tempo do loop
-#apple = pygame.image.load('graficos/apple.png').convert_alpha() #inseririndo a imagem da maçã
+#apple = pygame.image.load('Graphics/apple.png').convert_alpha() #inseririndo a imagem da maçã
 
 #fruit = FRUIT() #instaciando a class fruta
 #snake = SKAKE() #instanciando a class cobra
@@ -142,7 +146,7 @@ while True: # loop para nao feixa a janela
     #pygame.draw.ellipse(screen,pygame.Color('red'), test_rect) #desenhando o retangulo da maçã ellipse redonda
     #screen.blit(test_surface,test_rect) #criado a superficie sobre a tela 
 
-    screen.fill((175,215,80)) #colocado cor no elemento janela modo avançado
+    screen.fill((175,215,70)) #colocado cor no elemento janela modo avançado
     main_game.draw_elements() #chamando a funcao main 
     pygame.display.update() #chamando a funcao do loop do display
     clock.tick(60) # limitado o numero de fps por segundo  
