@@ -104,7 +104,7 @@ pygame.display.set_caption('Jogo da Cobrinha') #alterado a barra de titulo
 #test_rect = pygame.Rect(100,200,100,100) #retangulo de teste de colisao (x,y,w,h) 
 #test_rect = test_surface.get_rect(topright=(200,250)) #alinhando o retangulo centro outro comando topright, center
 
-cell_size = 40 #tamanho da celula 
+cell_size = 30 #tamanho da celula 
 cell_number = 20 #numero de celulas
 screen = pygame.display.set_mode((cell_number * cell_size,cell_number * cell_size))  #criando a janela largura e altura
 clock = pygame.time.Clock() #tempo do loop
