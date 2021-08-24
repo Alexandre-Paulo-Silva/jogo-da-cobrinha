@@ -1,4 +1,4 @@
-## Jogo da cobrinha 
+## Jogo da cobrinha feito em python 
 
 ## Versao 1.0: 
 
